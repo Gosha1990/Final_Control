@@ -15,3 +15,16 @@ string[] myArray = { "Delta", "35", " main", "set", "141", "no" };
 
 int elimentLength = 3;
 
+string[] FinalArray(string[] str, int elimentLength)
+{
+    string newString = string.Empty;
+    for (int i = 0; i < str.Length; i++)
+    {
+        if (str[i].Length <= elimentLength)
+        {
+            newString = newString + str[i] + " ";
+        }
+
+    }
+    return newString.Split(" ");
+}
