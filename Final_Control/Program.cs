@@ -12,19 +12,30 @@
 //Задаем масив строк
 
 string[] myArray = { "Delta", "35", " main", "set", "141", "no" };
-
-int elimentLength = 3;
-
+/// <summary>
+/// Метод отбирает из массива элементы с количеством символов от 3 и меньше.
+/// </summary>
+/// <param name="str">элемент массива</param>
+/// <param name="elimentLength">максимальное колличество символов </param>
+/// <returns>подходящие элементы</returns>
 string[] FinalArray(string[] str, int elimentLength)
 {
-    string newString = string.Empty;
+    string newStr = string.Empty;
     for (int i = 0; i < str.Length; i++)
     {
         if (str[i].Length <= elimentLength)
         {
-            newString = newString + str[i] + " ";
+            newStr = newStr + str[i] + ",";
         }
 
     }
-    return newString.Split(" ");
+    newStr = newStr.Trim();
+    return newStr.Split(" ");
 }
+
+Console.WriteLine("Выводим получившийся массив: ");
+
+var elimentLength = 3;
+string[] newArray = FinalArray(myArray, elimentLength);
+Console.Write($"[{string.Join(' ', newArray)}]");
+;
