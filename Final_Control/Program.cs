@@ -25,11 +25,10 @@ string[] FinalArray(string[] str, int elimentLength)
     {
         if (str[i].Length <= elimentLength)
         {
-            newStr = newStr + str[i] + ",";
+            newStr = newStr + str[i] + " , ";
         }
 
     }
-    newStr = newStr.Trim();
     return newStr.Split(" ");
 }
 
@@ -37,5 +36,5 @@ Console.WriteLine("Выводим получившийся массив: ");
 
 var elimentLength = 3;
 string[] newArray = FinalArray(myArray, elimentLength);
-Console.Write($"[{string.Join(' ', newArray)}]");
+Console.WriteLine($"[{string.Join(' ', newArray)}]");
 ;
